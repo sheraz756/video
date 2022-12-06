@@ -1,0 +1,204 @@
+@import "bootstrap/bootstrap.less";
+
+//
+//Variables
+//-------------------------------------------------------------------
+
+//colors
+@grey: #7a7a7a;
+@grey-darker: #313234;
+@black: #1F1F1F;
+@beige: #F8F8F8;
+@purple: #4641B8;
+
+//backgrounds
+@stardust: @grey-darker url('../img/stardust.png');
+@wavecut: @grey url('../img/wavecut.png');
+
+//borders
+@grey-border: 2px solid @grey;
+
+
+//
+//Generic Styles
+//----------------------------------------------------------------------
+body {
+	 background: @stardust;
+	 font-family: 'Dosis', sans-serif; 
+	 color: @beige;
+}
+p {
+	font-size: 1.4em;
+}
+h1, h2, h3, h4, h5 {
+	//background: @wavecut;
+	padding: 10px 0px;
+	//border: @grey-border;
+}
+.site-footer{
+	background-color: @purple;
+	color: @beige;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	//width: 100%;
+	opacity: 0.9;
+	li {display: inline-block; list-style:none;}
+	a {
+		color: @beige;
+		cursor:pointer;
+		//&:hover{background-color:@purple;text-decoration:none;}
+	}
+}
+//nav li a:hover {background-color: @purple!important;}
+.lead-text {
+	font-size: 2em;
+	color: @black;
+}
+
+.block {
+	min-height:200px;
+	background: @wavecut;
+	color: @black;
+	border-radius: 30px;
+	text-align: center;
+	padding: 3%;
+	a {
+		color: @purple;
+	}
+}
+
+.block--narrow {
+	display: block;
+	margin: 0 auto;
+	max-width: 650px;
+}
+
+.logo-container {
+	&:hover, &:focus {
+		background: @wavecut;
+	}
+}
+.popover {
+	font-size: 0.7em;
+	.block;
+	.arrow{display:none;}
+	padding: 1%;
+	opacity:1;
+	.close{outline:none;}
+}
+
+//
+//Videos
+//-----------------------------------------------------------------------
+
+#localVideo{
+	width: 25%; 
+	min-width: 160px;
+	border: @grey-border;
+}
+#remoteVideo{
+	width: 100%;
+	max-height:100%;
+	border: @grey-border;
+}
+
+.videos {
+	p {margin-top: 2%;}
+	.room-url {background-color: @purple; padding: 1%;}
+}
+
+//
+//Homepage
+//------------------------------------------------------------------------
+.input--roomName {
+	display: inline-block; 
+	width: auto; 
+	vertical-align:middle;
+}
+
+//
+//Audio Effects Panel
+//------------------------------------------------------------------------
+
+.effects-panel {
+	display:none;
+	padding: 20px;
+	-webkit-animation: myanim 2s;
+	animation: myanim 2s;
+	h1,h2,h3,h4 {border: @grey-border;}
+}
+
+//animate effects panel appearance
+@-webkit-keyframes myanim { 0% { opacity: 0.1; }100% { opacity: 1.0; } }
+@-moz-keyframes myanim { 0% { opacity: 0.1; }100% { opacity: 1.0; } }
+@-o-keyframes myanim { 0% { opacity: 0.1; }100% { opacity: 1.0; } }
+@keyframes myanim { 0% { opacity: 0.1; }100% { opacity: 1.0; } }
+
+.btn-option {opacity: 0.8;}
+
+//Inputs
+
+input[type="range"] {
+	background: @purple;
+	border: none;
+	display: block;
+	height: 10px;
+	width: 100%;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	&:focus{
+		outline: none;
+	}
+ }
+ 
+ input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+	background: white;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+	background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+	background-image: -o-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+	-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	&:after {
+		content: "";
+		display: block;
+		width: 10px;
+		height: 10px;
+		margin: auto;
+		background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.13)), color-stop(100%, rgba(255, 255, 255, 0)));
+		background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+		background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+		background-image: -o-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+		background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		-ms-border-radius: 20px;
+		-o-border-radius: 20px;
+		border-radius: 20px;
+	}
+}
+
+input[type="checkbox"] {float:none!important;}
+
+
